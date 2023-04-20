@@ -30,5 +30,7 @@ if st.button("Generate") and occasion != "" and recipient !="":
             The card should be {tone}. Don't include any salutations or sign offs. In cases where gender is\
                  ambiguous, use gender neutral terminology."
         if personal_message != "":
+            print(personal_message)
+            print(message_prompt)
             message_prompt += f" Incorporate the following information to make it more personal: {personal_message}.",
         
