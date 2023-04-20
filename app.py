@@ -31,4 +31,5 @@ if st.button("Generate") and occasion != "" and recipient !="":
                  ambiguous, use gender neutral terminology."
         if personal_message != "":
             message_prompt += f" Incorporate the following information to make it more personal: {personal_message}."
+        generate_message(message_prompt)
         
