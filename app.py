@@ -19,6 +19,9 @@ def generate_message(prompt: str):
     st.markdown(message)
 
 st.title("Card Genie")
+col1, col2 = st.columns(2)
+
+with col1:
 occasion = st.text_input("What is the occasion?", placeholder="birthday", max_chars=50)
 recipient = st.text_input("Who is the card for?", placeholder="neighbor", max_chars=50)
 tone = st.text_input("What tone would you like the card to take?", value="friendly", max_chars=120)
@@ -32,5 +35,6 @@ if st.button("Generate") and occasion != "" and recipient !="":
                  ambiguous, use gender neutral terminology."
         if personal_message != "":
             message_prompt += f" Incorporate the following information to make it more personal: {personal_message}."
-        generate_message(message_prompt)
+        with col2:
+            generate_message(message_prompt)
         
