@@ -16,8 +16,7 @@ def generate_message(prompt: str):
         presence_penalty=0
     )
     message = response.choices and response.choices[0] and response.choices[0].text.strip();
-    with col2:
-        st.markdown(message)
+    st.markdown(message)
 
 st.title("Card Genie")
 col1, col2 = st.columns(2)
@@ -29,6 +28,7 @@ with col1:
     personal_message = st.text_input("Add a personal detail if you'd like it to be incorporated in the card message", 
         placeholder="thanks for helping us move in!", max_chars=100)
 
+with col2:
     if st.button("Generate") and occasion != "" and recipient !="":
         with st.spinner("Generating message..."):
             message_prompt = f"You're a professional card writer. Write a {occasion} card for my {recipient}.\
