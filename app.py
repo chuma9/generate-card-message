@@ -15,7 +15,7 @@ def generate_message(prompt: str):
         frequency_penalty=0,
         presence_penalty=0
     )
-    message = response.choices and response.choices[0] and response.choices[0].text.trim();
+    message = response.choices and response.choices[0] and response.choices[0].text.strip();
     st.text(message)
 
 st.title("Card Genie")
