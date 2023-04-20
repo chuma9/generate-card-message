@@ -15,7 +15,8 @@ def generate_message(prompt: str):
         frequency_penalty=0,
         presence_penalty=0
     )
-    st.text(response)
+    message = response.choices && response.choices[0] && response.choices[0].text.trim();
+    st.text(message)
 
 st.title("Card Genie")
 occasion = st.text_input("What is the occasion?", placeholder="birthday", max_chars=50)
